@@ -1,53 +1,13 @@
 {
   "@build":"365335",
-  "@timestamp":"Mon Oct 21 19:14:06 2024",
+  "@timestamp":"Mon Oct 21 19:51:10 2024",
   "configuration":[
     {
       "DomainSettings":{
         "@name":"default",
         "mAdminState":"enabled",
-        "PasswordTreatment":"masked",
+        "PasswordTreatment":"none",
         "ConfigDir":"config:///"
-      }
-    },
-    {
-      "PasswordAlias":{
-        "@name":"githubops",
-        "mAdminState":"enabled"
-      }
-    },
-    {
-      "PasswordAlias":{
-        "@name":"gitops-pass",
-        "mAdminState":"enabled"
-      }
-    },
-    {
-      "CryptoCertificate":{
-        "@name":"9",
-        "mAdminState":"enabled",
-        "Filename":"cert:///9-sscert.pem",
-        "PasswordAlias":"off",
-        "IgnoreExpiration":"off"
-      }
-    },
-    {
-      "CryptoCertificate":{
-        "@name":"dp103",
-        "mAdminState":"enabled",
-        "Filename":"cert:///dp103",
-        "PasswordAlias":"on",
-        "Alias":"gitops-pass",
-        "IgnoreExpiration":"off"
-      }
-    },
-    {
-      "CryptoCertificate":{
-        "@name":"git",
-        "mAdminState":"enabled",
-        "Filename":"cert:///git-sscert.pem",
-        "PasswordAlias":"off",
-        "IgnoreExpiration":"off"
       }
     },
     {
@@ -57,47 +17,6 @@
         "Filename":"cert:///id-gitops-sscert.pem",
         "PasswordAlias":"off",
         "IgnoreExpiration":"off"
-      }
-    },
-    {
-      "CryptoCertificate":{
-        "@name":"swat",
-        "mAdminState":"enabled",
-        "Filename":"cert:///id-gitops-sscert.pem",
-        "PasswordAlias":"off",
-        "IgnoreExpiration":"off"
-      }
-    },
-    {
-      "CryptoKey":{
-        "@name":"9",
-        "mAdminState":"enabled",
-        "Filename":"cert:///9-privkey.pem",
-        "PasswordAlias":"off"
-      }
-    },
-    {
-      "CryptoKey":{
-        "@name":"git",
-        "mAdminState":"enabled",
-        "Filename":"cert:///git-privkey.pem",
-        "PasswordAlias":"off"
-      }
-    },
-    {
-      "CryptoKey":{
-        "@name":"gitops-sshkey",
-        "mAdminState":"enabled",
-        "Filename":"cert:///dp104",
-        "PasswordAlias":"off"
-      }
-    },
-    {
-      "CryptoKey":{
-        "@name":"gitopsssh",
-        "mAdminState":"enabled",
-        "Filename":"cert:///dp104",
-        "PasswordAlias":"off"
       }
     },
     {
@@ -117,252 +36,8 @@
       }
     },
     {
-      "CryptoKey":{
-        "@name":"swat",
-        "mAdminState":"enabled",
-        "Filename":"cert:///id-gitops-privkey.pem",
-        "PasswordAlias":"off"
-      }
-    },
-    {
-      "CryptoIdentCred":{
-        "@name":"id-gitops",
-        "mAdminState":"enabled",
-        "Key":"id-gitops",
-        "Certificate":"id-gitops"
-      }
-    },
-    {
-      "CryptoValCred":{
-        "@name":"githubval",
-        "mAdminState":"enabled",
-        "CertValidationMode":"legacy",
-        "UseCRL":"on",
-        "RequireCRL":"off",
-        "CRLDPHandling":"ignore",
-        "InitialPolicySet":[
-          "2.5.29.32.0"
-        ],
-        "ExplicitPolicy":"off",
-        "CheckDates":"on"
-      }
-    },
-    {
-      "SSLClientProfile":{
-        "@name":"mpg-client-rofile",
-        "mAdminState":"enabled",
-        "Protocols":{
-          "SSLv3":"off",
-          "TLSv1d0":"off",
-          "TLSv1d1":"on",
-          "TLSv1d2":"on",
-          "TLSv1d3":"on"
-        },
-        "Ciphers":[
-          "AES_256_GCM_SHA384",
-          "CHACHA20_POLY1305_SHA256",
-          "AES_128_GCM_SHA256",
-          "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
-          "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
-          "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
-          "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
-          "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
-          "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
-          "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
-          "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
-          "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-          "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
-          "ECDHE_RSA_WITH_AES_256_CBC_SHA",
-          "ECDHE_RSA_WITH_AES_128_CBC_SHA",
-          "DHE_RSA_WITH_AES_256_GCM_SHA384",
-          "DHE_RSA_WITH_AES_256_CBC_SHA256",
-          "DHE_RSA_WITH_AES_128_GCM_SHA256",
-          "DHE_RSA_WITH_AES_128_CBC_SHA256",
-          "DHE_RSA_WITH_AES_256_CBC_SHA",
-          "DHE_RSA_WITH_AES_128_CBC_SHA"
-        ],
-        "ValidateServerCert":"off",
-        "Caching":"on",
-        "CacheTimeout":300,
-        "CacheSize":100,
-        "SSLClientFeatures":{
-          "use-sni":"on",
-          "permit-insecure-servers":"off",
-          "compression":"off"
-        },
-        "UseCustomSNIHostname":"no",
-        "ValidateHostname":"off",
-        "HostnameValidationFailOnError":"off",
-        "EnableTLS13Compat":"on",
-        "DisableRenegotiation":"off"
-      }
-    },
-    {
-      "SSLServerProfile":{
-        "@name":"gitops",
-        "mAdminState":"enabled",
-        "Protocols":{
-          "SSLv3":"off",
-          "TLSv1d0":"off",
-          "TLSv1d1":"on",
-          "TLSv1d2":"on",
-          "TLSv1d3":"on"
-        },
-        "Ciphers":[
-          "AES_256_GCM_SHA384",
-          "CHACHA20_POLY1305_SHA256",
-          "AES_128_GCM_SHA256",
-          "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
-          "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
-          "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
-          "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
-          "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
-          "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
-          "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
-          "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
-          "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-          "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
-          "ECDHE_RSA_WITH_AES_256_CBC_SHA",
-          "ECDHE_RSA_WITH_AES_128_CBC_SHA",
-          "DHE_RSA_WITH_AES_256_GCM_SHA384",
-          "DHE_RSA_WITH_AES_256_CBC_SHA256",
-          "DHE_RSA_WITH_AES_128_GCM_SHA256",
-          "DHE_RSA_WITH_AES_128_CBC_SHA256",
-          "DHE_RSA_WITH_AES_256_CBC_SHA",
-          "DHE_RSA_WITH_AES_128_CBC_SHA"
-        ],
-        "Idcred":"id-gitops",
-        "RequestClientAuth":"off",
-        "RequireClientAuth":"on",
-        "ValidateClientCert":"on",
-        "SendClientAuthCAList":"on",
-        "Caching":"on",
-        "CacheTimeout":300,
-        "CacheSize":20,
-        "SSLOptions":{
-          "max-duration":"off",
-          "max-renegotiation":"off"
-        },
-        "MaxSSLDuration":60,
-        "DisableRenegotiation":"off",
-        "NumberOfRenegotiationAllowed":0,
-        "ProhibitResumeOnReneg":"off",
-        "Compression":"off",
-        "AllowLegacyRenegotiation":"off",
-        "PreferServerCiphers":"on",
-        "EllipticCurves":[
-          "secp521r1",
-          "secp384r1",
-          "secp256k1",
-          "secp256r1"
-        ],
-        "PrioritizeChaCha":"off",
-        "SigAlgs":[
-          "ecdsa_secp256r1_sha256",
-          "ecdsa_secp384r1_sha384",
-          "ecdsa_secp521r1_sha512",
-          "ed25519",
-          "ed448",
-          "rsa_pss_pss_sha256",
-          "rsa_pss_pss_sha384",
-          "rsa_pss_pss_sha512",
-          "rsa_pss_rsae_sha256",
-          "rsa_pss_rsae_sha384",
-          "rsa_pss_rsae_sha512",
-          "rsa_pkcs1_sha256",
-          "rsa_pkcs1_sha384",
-          "rsa_pkcs1_sha512",
-          "ecdsa_sha224",
-          "ecdsa_sha1",
-          "rsa_pkcs1_sha224",
-          "rsa_pkcs1_sha1",
-          "dsa_sha224",
-          "dsa_sha1",
-          "dsa_sha256",
-          "dsa_sha384",
-          "dsa_sha512"
-        ]
-      }
-    },
-    {
       "SSHClientProfile":{
-        "@name":"gitops-sshclient",
-        "mAdminState":"enabled",
-        "UserName":"git",
-        "ProfileUsage":"sftp",
-        "SSHUserAuthentication":{
-          "publickey":"on",
-          "password":"off"
-        },
-        "UserPrivateKey":"gitops-sshkey",
-        "PersistentConnections":"on",
-        "PersistentConnectionTimeout":120,
-        "StrictHostKeyChecking":"off",
-        "Ciphers":[
-          "AES128-CTR",
-          "AES192-CTR",
-          "AES256-CTR",
-          "AES128-GCM_AT_OPENSSH.COM",
-          "AES256-GCM_AT_OPENSSH.COM"
-        ],
-        "KEXAlg":[
-          "CURVE25519-SHA256_AT_LIBSSH.ORG",
-          "ECDH-SHA2-NISTP256",
-          "ECDH-SHA2-NISTP384",
-          "ECDH-SHA2-NISTP521",
-          "DIFFIE-HELLMAN-GROUP-EXCHANGE-SHA256"
-        ],
-        "MACAlg":[
-          "UMAC-64_AT_OPENSSH.COM",
-          "UMAC-128_AT_OPENSSH.COM",
-          "HMAC-SHA2-256",
-          "HMAC-SHA2-512",
-          "HMAC-SHA1"
-        ],
-        "LegacyKex":"no"
-      }
-    },
-    {
-      "SSHClientProfile":{
-        "@name":"gitpops-ssh-client-profile",
-        "mAdminState":"enabled",
-        "UserName":"git",
-        "ProfileUsage":"sftp",
-        "SSHUserAuthentication":{
-          "publickey":"on",
-          "password":"off"
-        },
-        "UserPrivateKey":"sshkey",
-        "PersistentConnections":"on",
-        "PersistentConnectionTimeout":120,
-        "StrictHostKeyChecking":"off",
-        "Ciphers":[
-          "AES128-CTR",
-          "AES192-CTR",
-          "AES256-CTR",
-          "AES128-GCM_AT_OPENSSH.COM",
-          "AES256-GCM_AT_OPENSSH.COM"
-        ],
-        "KEXAlg":[
-          "CURVE25519-SHA256_AT_LIBSSH.ORG",
-          "ECDH-SHA2-NISTP256",
-          "ECDH-SHA2-NISTP384",
-          "ECDH-SHA2-NISTP521",
-          "DIFFIE-HELLMAN-GROUP-EXCHANGE-SHA256"
-        ],
-        "MACAlg":[
-          "UMAC-64_AT_OPENSSH.COM",
-          "UMAC-128_AT_OPENSSH.COM",
-          "HMAC-SHA2-256",
-          "HMAC-SHA2-512",
-          "HMAC-SHA1"
-        ],
-        "LegacyKex":"no"
-      }
-    },
-    {
-      "SSHClientProfile":{
-        "@name":"sshconfig",
+        "@name":"ssh-client-profile",
         "mAdminState":"enabled",
         "UserName":"git",
         "ProfileUsage":"sftp",
@@ -431,12 +106,12 @@
         "EventBufferSize":"2048",
         "LogEvents":[
           {
-            "Class":"mgmt",
-            "Priority":"notice"
+            "Class":"all",
+            "Priority":"error"
           },
           {
-            "Class":"all",
-            "Priority":"debug"
+            "Class":"mgmt",
+            "Priority":"notice"
           }
         ]
       }
@@ -679,88 +354,6 @@
       }
     },
     {
-      "StylePolicyAction":{
-        "@name":"default_rule_0_gatewayscript_0",
-        "mAdminState":"enabled",
-        "Type":"gatewayscript",
-        "Input":"INPUT",
-        "ParseSettingsReference":{
-          "URL":"",
-          "Literal":null,
-          "Default":null
-        },
-        "ParseMetricsResultType":"none",
-        "TransformLanguage":"none",
-        "GatewayScriptLocation":"local:///gws.js",
-        "ActionDebug":"off",
-        "Output":"PIPE",
-        "NoTranscodeUtf8":"off",
-        "SSLClientConfigType":"proxy",
-        "Transactional":"off",
-        "SOAPValidation":"body",
-        "SQLSourceType":"static",
-        "JWSVerifyStripSignature":"on",
-        "Asynchronous":"off",
-        "ResultsMode":"first-available",
-        "RetryCount":0,
-        "RetryInterval":1000,
-        "MultipleOutputs":"off",
-        "IteratorType":"XPATH",
-        "Timeout":0,
-        "MethodRewriteType":"GET",
-        "MethodType":"POST",
-        "MethodType2":"POST"
-      }
-    },
-    {
-      "StylePolicyAction":{
-        "@name":"default_rule_0_results_output_0",
-        "mAdminState":"enabled",
-        "Type":"results",
-        "Input":"PIPE",
-        "ParseSettingsReference":{
-          "URL":"",
-          "Literal":null,
-          "Default":null
-        },
-        "ParseMetricsResultType":"none",
-        "TransformLanguage":"none",
-        "ActionDebug":"off",
-        "NoTranscodeUtf8":"off",
-        "SSLClientConfigType":"proxy",
-        "OutputType":"default",
-        "Transactional":"off",
-        "SOAPValidation":"body",
-        "SQLSourceType":"static",
-        "JWSVerifyStripSignature":"on",
-        "Asynchronous":"off",
-        "ResultsMode":"first-available",
-        "RetryCount":0,
-        "RetryInterval":1000,
-        "MultipleOutputs":"off",
-        "IteratorType":"XPATH",
-        "Timeout":0,
-        "MethodRewriteType":"GET",
-        "MethodType":"POST",
-        "MethodType2":"POST"
-      }
-    },
-    {
-      "StylePolicyRule":{
-        "@name":"default_rule_0",
-        "mAdminState":"enabled",
-        "Actions":[
-          "default_rule_0_gatewayscript_0",
-          "default_rule_0_results_output_0"
-        ],
-        "Direction":"rule",
-        "InputFormat":"none",
-        "OutputFormat":"none",
-        "NonXMLProcessing":"off",
-        "Unprocessed":"off"
-      }
-    },
-    {
       "APIRule":{
         "@name":"default-api-error-rule",
         "mAdminState":"enabled",
@@ -876,39 +469,13 @@
       }
     },
     {
-      "Matching":{
-        "@name":"gitopsmr",
-        "mAdminState":"enabled",
-        "MatchRules":[
-          {
-            "Type":"url",
-            "HttpTag":null,
-            "HttpValue":null,
-            "Url":"/test/",
-            "ErrorCode":null,
-            "XPATHExpression":null,
-            "Method":"default",
-            "CustomMethod":null
-          }
-        ],
-        "MatchWithPCRE":"off",
-        "CombineWithOr":"off"
-      }
-    },
-    {
       "StylePolicy":{
         "@name":"default",
         "mAdminState":"enabled",
         "UserSummary":"Default Processing Policy",
         "DefStylesheetForSoap":"store:///filter-reject-all.xsl",
         "DefStylesheetForXsl":"store:///identity.xsl",
-        "DefXQueryForJSON":"store:///reject-all-json.xq",
-        "PolicyMaps":[
-          {
-            "Match":"gitopsmr",
-            "Rule":"default_rule_0"
-          }
-        ]
+        "DefXQueryForJSON":"store:///reject-all-json.xq"
       }
     },
     {
@@ -1080,56 +647,6 @@
       }
     },
     {
-      "HTTPSSourceProtocolHandler":{
-        "@name":"fsh-https-gitops",
-        "mAdminState":"enabled",
-        "LocalAddress":"0.0.0.0",
-        "LocalPort":9445,
-        "HTTPVersion":"HTTP/1.1",
-        "AllowedFeatures":{
-          "HTTP-1.0":"on",
-          "HTTP-1.1":"on",
-          "HTTP-2.0":"on",
-          "POST":"on",
-          "GET":"on",
-          "PUT":"on",
-          "PATCH":"on",
-          "HEAD":"on",
-          "OPTIONS":"on",
-          "TRACE":"on",
-          "DELETE":"on",
-          "CONNECT":"off",
-          "CustomMethods":"off",
-          "QueryString":"on",
-          "FragmentIdentifiers":"on",
-          "DotDot":"off",
-          "DotDotInPath":"off",
-          "DotDotInQueryString":"off",
-          "CmdExe":"off"
-        },
-        "PersistentConnections":"on",
-        "MaxPersistentConnectionsReuse":0,
-        "AllowCompression":"off",
-        "AllowWebSocketUpgrade":"off",
-        "WebSocketIdleTimeout":0,
-        "MaxURLLen":16384,
-        "MaxTotalHdrLen":128000,
-        "MaxHdrCount":0,
-        "MaxNameHdrLen":0,
-        "MaxValueHdrLen":0,
-        "MaxQueryStringLen":0,
-        "CredentialCharset":"protocol",
-        "SSLServerConfigType":"server",
-        "SSLServer":"gitops",
-        "HTTP2MaxStreams":100,
-        "HTTP2MaxFrameSize":16384,
-        "HTTP2StreamHeader":"off",
-        "ChunkedEncoding":"on",
-        "HeaderTimeout":30000,
-        "HTTP2IdleTimeout":0
-      }
-    },
-    {
       "WSStylePolicy":{
         "@name":"default",
         "mAdminState":"enabled",
@@ -1168,127 +685,6 @@
       }
     },
     {
-      "PolicyAttachments":{
-        "@name":"mpg-gitops",
-        "mAdminState":"enabled",
-        "EnforcementMode":"enforce",
-        "PolicyReferences":"on",
-        "SLAEnforcementMode":"allow-if-no-sla"
-      }
-    },
-    {
-      "MultiProtocolGateway":{
-        "@name":"mpg-gitops",
-        "mAdminState":"enabled",
-        "Priority":"normal",
-        "FrontProtocol":[
-          "fsh-https-gitops"
-        ],
-        "XMLManager":"default",
-        "SSLClientConfigType":"client",
-        "SSLClient":"mpg-client-rofile",
-        "DefaultParamNamespace":"http://www.datapower.com/param/config",
-        "QueryParamNamespace":"http://www.datapower.com/param/query",
-        "BackendUrl":"https://127.0.0.1",
-        "PropagateURI":"on",
-        "MonitorProcessingPolicy":"terminate-at-first-throttle",
-        "RequestAttachments":"strip",
-        "ResponseAttachments":"strip",
-        "RequestAttachmentsFlowControl":"off",
-        "ResponseAttachmentsFlowControl":"off",
-        "RootPartNotFirstAction":"process-in-order",
-        "FrontAttachmentFormat":"dynamic",
-        "BackAttachmentFormat":"dynamic",
-        "MIMEFrontHeaders":"on",
-        "MIMEBackHeaders":"on",
-        "StreamOutputToBack":"buffer-until-verification",
-        "StreamOutputToFront":"buffer-until-verification",
-        "MaxMessageSize":0,
-        "GatewayParserLimits":"off",
-        "ParserLimitsElementDepth":512,
-        "ParserLimitsAttributeCount":128,
-        "ParserLimitsMaxNodeSize":33554432,
-        "ParserLimitsForbidExternalReferences":"on",
-        "ParserLimitsExternalReferences":"forbid",
-        "ParserLimitsMaxPrefixes":1024,
-        "ParserLimitsMaxNamespaces":1024,
-        "ParserLimitsMaxLocalNames":60000,
-        "ParserLimitsAttachmentByteCount":2000000000,
-        "ParserLimitsAttachmentPackageByteCount":0,
-        "DebugMode":"off",
-        "DebuggerType":"internal",
-        "DebugHistory":25,
-        "FlowControl":"off",
-        "SOAPSchemaURL":"store:///schemas/soap-envelope.xsd",
-        "FrontTimeout":120,
-        "BackTimeout":120,
-        "FrontPersistentTimeout":180,
-        "BackPersistentTimeout":180,
-        "IncludeResponseTypeEncoding":"off",
-        "PersistentConnections":"on",
-        "LoopDetection":"off",
-        "DoHostRewriting":"on",
-        "DoChunkedUpload":"off",
-        "ProcessHTTPErrors":"on",
-        "HTTPClientIPLabel":"X-Client-IP",
-        "HTTPLogCorIDLabel":"X-Global-Transaction-ID",
-        "InOrderMode":{
-          "Request":"off",
-          "Backend":"off",
-          "Response":"off"
-        },
-        "WSAMode":"sync2sync",
-        "WSARequireAAA":"on",
-        "WSAStrip":"on",
-        "WSADefaultReplyTo":"http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous",
-        "WSADefaultFaultTo":"http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous",
-        "WSAForce":"off",
-        "WSAGenStyle":"sync",
-        "WSAHTTPAsyncResponseCode":204,
-        "WSATimeout":120,
-        "WSRMEnabled":"off",
-        "WSRMSequenceExpiration":3600,
-        "WSRMDestinationAcceptCreateSequence":"on",
-        "WSRMDestinationMaximumSequences":400,
-        "WSRMDestinationInOrder":"off",
-        "WSRMDestinationMaximumInOrderQueueLength":10,
-        "WSRMDestinationAcceptOffers":"off",
-        "WSRMFrontForce":"off",
-        "WSRMBackForce":"off",
-        "WSRMBackCreateSequence":"off",
-        "WSRMFrontCreateSequence":"off",
-        "WSRMSourceMakeOffer":"off",
-        "WSRMUsesSequenceSSL":"off",
-        "WSRMSourceMaximumSequences":400,
-        "WSRMSourceRetransmissionInterval":10,
-        "WSRMSourceExponentialBackoff":"on",
-        "WSRMSourceMaximumRetransmissions":4,
-        "WSRMSourceMaximumQueueLength":30,
-        "WSRMSourceRequestAckCount":1,
-        "WSRMSourceInactivityClose":360,
-        "ForcePolicyExec":"off",
-        "RewriteErrors":"on",
-        "DelayErrors":"on",
-        "DelayErrorsDuration":1000,
-        "BackHTTPVersion":"HTTP/1.1",
-        "HTTP2Required":"off",
-        "RequestType":"preprocessed",
-        "ResponseType":"preprocessed",
-        "FollowRedirects":"on",
-        "RewriteLocationHeader":"off",
-        "StylePolicy":"default",
-        "Type":"static-backend",
-        "AllowCompression":"off",
-        "EnableCompressedPayloadPassthrough":"off",
-        "AllowCacheControlHeader":"off",
-        "PolicyAttachments":"mpg-gitops",
-        "WSMAgentMonitor":"off",
-        "WSMAgentMonitorPCM":"all-messages",
-        "ProxyHTTPResponse":"off",
-        "TransactionTimeout":0
-      }
-    },
-    {
       "Statistics":{
         "@name":"default",
         "mAdminState":"disabled",
@@ -1315,7 +711,7 @@
           "ProxyPolicyEnable":"off",
           "RemoteAddress":"",
           "RemotePort":0,
-          "UserName":"",
+          "UserName":null,
           "Password":null
         }
       }
@@ -1403,13 +799,7 @@
     {
       "DomainAvailability":{
         "@name":"default",
-        "mAdminState":"disabled",
-        "MonitoredService":[
-          {
-            "WSGatewayName":null,
-            "MultiProtocolGatewayName":"mpg-gitops"
-          }
-        ]
+        "mAdminState":"disabled"
       }
     },
     {
